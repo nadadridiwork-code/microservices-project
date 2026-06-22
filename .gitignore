@@ -1,0 +1,11 @@
+node_modules/
+*.log
+.env
+
+kafka_2.13-4.2.0/
+kafka_2.13-4.2.0.tgz
+*.jar
+
+dist/
+build/
+target/

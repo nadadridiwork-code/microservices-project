@@ -1,0 +1,12 @@
+{
+  "name": "kafka-broker",
+  "version": "1.0.0",
+  "description": "Mock Kafka Broker running on TCP",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "microservices-project": "file:.."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "microservices-project",
+  "version": "1.0.0",
+  "description": "Smart E-Commerce Microservices Application using Node.js, gRPC, Kafka, SQLite3, RxDB, REST and GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix shared && npm install --prefix kafka-broker && npm install --prefix api-gateway && npm install --prefix product-service && npm install --prefix order-service && npm install --prefix customer-service",
+    "start:broker": "cd kafka_2.13-4.2.0 && .\\bin\\windows\\kafka-server-start.bat .\\config\\server.properties",
+    "start:product": "node product-service/index.js",
+    "start:order": "node order-service/index.js",
+    "start:customer": "node customer-service/index.js",
+    "start:gateway": "node api-gateway/index.js",
+    "start:all": "concurrently --kill-others \"npm run start:broker\" \"npm run start:product\" \"npm run start:order\" \"npm run start:customer\" \"npm run start:gateway\"",
+    "test:flow": "node shared/test-flow.js"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

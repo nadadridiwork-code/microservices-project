@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package customer;
+
+service CustomerService {
+  rpc GetCustomer (GetCustomerRequest) returns (Customer);
+  rpc CreateCustomer (CreateCustomerRequest) returns (Customer);
+  rpc GetActivityLogs (GetActivityLogsRequest) returns (ActivityLogsResponse);
+}
+
+message Customer {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  int32 loyalty_points = 4;
+}
+
+message GetCustomerRequest {
+  string id = 1;
+}
+
+message CreateCustomerRequest {
+  string name = 1;
+  string email = 2;
+}
+
+message ActivityLog {
+  string id = 1;
+  string customer_id = 2;
+  string activity_type = 3;
+  string description = 4;
+  string timestamp = 5;
+}
+
+message GetActivityLogsRequest {
+  string customer_id = 1;
+}
+
+message ActivityLogsResponse {
+  repeated ActivityLog logs = 1;
+}

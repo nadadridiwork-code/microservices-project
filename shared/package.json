@@ -1,0 +1,10 @@
+{
+  "name": "shared-kafka-client",
+  "version": "1.0.0",
+  "description": "Shared package for Kafka wrapper client and protos",
+  "main": "kafka/kafka-client.js",
+  "dependencies": {
+    "kafkajs": "^2.2.4",
+    "microservices-project": "file:.."
+  }
+}
